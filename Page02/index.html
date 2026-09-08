@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page02</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- VENTANA PRINCIPAL -->
+  <div class="window">
+    <div class="window-header">
+      <span class="window-title">Ventana de Configuración</span>
+      <div class="window-icons">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9"/><path d="M12 12v3"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+      </div>
+    </div>
+
+    <div class="tabs-container">
+      <input type="radio" id="tab1" name="tab-group" class="tab-radio">
+      <input type="radio" id="tab2" name="tab-group" class="tab-radio" checked>
+      <input type="radio" id="tab3" name="tab-group" class="tab-radio">
+
+      <div class="tabs-header">
+        <label for="tab1" class="tab-label"><span class="step-num">1</span> Review Order</label>
+        <label for="tab2" class="tab-label"><span class="step-num">2</span> Select Shipping</label>
+        <label for="tab3" class="tab-label"><span class="step-num">3</span> Submit</label>
+      </div>
+
+      <div class="tab-content-container">
+        <div id="content1" class="tab-content">
+          <p>Puede ver su pedido en esta pestaña.</p>
+        </div>
+
+        <div id="content2" class="tab-content">
+          <h2 class="section-title">Shipping</h2>
+          <p class="subtitle">Delivery Method</p>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="opcion" value="1" checked>
+              <span>Standard Shipping</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="opcion" value="2">
+              <span>Priority Shipping</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="opcion" value="3">
+              <span>Express Shipping</span>
+            </label>
+          </div>
+          <div class="step-actions">
+            <button class="btn-text">PREVIOUS</button>
+            <button class="btn-primary">NEXT</button>
+          </div>
+        </div>
+
+        <div id="content3" class="tab-content">
+          <p>Aquí puede enviar su solicitud.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARTA DE SELECCIÓN DE COLOR -->
+  <form class="card-color">
+    <!-- Parte 1: Rectángulo con color interactivo -->
+    <div id="colorPreview" class="color-preview"></div>
+
+    <!-- Parte 2: 3 Sliders y 3 Text Fields numéricos -->
+    <div class="controls-container">
+      <!-- Rojo -->
+      <div class="control-row">
+        <label for="redRange">R</label>
+        <input type="range" name="r" id="redRange" min="0" max="255" value="80" oninput="redNum.value=this.value">
+        <input type="number" name="r_num" id="redNum" min="0" max="255" value="80" oninput="redRange.value=this.value">
+      </div>
+
+      <!-- Verde -->
+      <div class="control-row">
+        <label for="greenRange">G</label>
+        <input type="range" name="g" id="greenRange" min="0" max="255" value="165" oninput="greenNum.value=this.value">
+        <input type="number" name="g_num" id="greenNum" min="0" max="255" value="165" oninput="greenRange.value=this.value">
+      </div>
+
+      <!-- Azul -->
+      <div class="control-row">
+        <label for="blueRange">B</label>
+        <input type="range" name="b" id="blueRange" min="0" max="255" value="92" oninput="blueNum.value=this.value">
+        <input type="number" name="b_num" id="blueNum" min="0" max="255" value="92" oninput="blueRange.value=this.value">
+      </div>
+    </div>
+  </form>
+
+</body>
+</html>

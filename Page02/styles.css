@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* =======================================
+   VENTANA PRINCIPAL
+   ======================================= */
+.window {
+  width: 100%;
+  max-width: 650px;
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.window-header {
+  background-color: #2d2d2d;
+  color: #a0a0a0;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #383838;
+}
+
+.window-title {
+  display: none;
+}
+
+.window-icons {
+  display: flex;
+  gap: 14px;
+  margin-left: auto;
+}
+
+.window-icons svg {
+  width: 16px;
+  height: 16px;
+  stroke: #a0a0a0;
+  cursor: pointer;
+  transition: stroke 0.2s;
+}
+
+.window-icons svg:hover {
+  stroke: #ffffff;
+}
+
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-radio {
+  display: none;
+}
+
+.tabs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.tab-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #808080;
+  transition: color 0.2s;
+}
+
+.step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #333333;
+  color: #808080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tab-content {
+  display: none;
+  padding: 30px;
+}
+
+/* Selección de Pestañas en CSS */
+#tab1:checked ~ .tabs-header label[for="tab1"],
+#tab2:checked ~ .tabs-header label[for="tab2"],
+#tab3:checked ~ .tabs-header label[for="tab3"] {
+  color: #ffffff;
+}
+
+#tab1:checked ~ .tabs-header label[for="tab1"] .step-num,
+#tab2:checked ~ .tabs-header label[for="tab2"] .step-num,
+#tab3:checked ~ .tabs-header label[for="tab3"] .step-num {
+  background-color: #ffffff;
+  color: #1e1e1e;
+}
+
+#tab1:checked ~ .tab-content-container #content1,
+#tab2:checked ~ .tab-content-container #content2,
+#tab3:checked ~ .tab-content-container #content3 {
+  display: block;
+}
+
+/* Formulario interno */
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #a0a0a0;
+  margin-bottom: 16px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.radio-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #666;
+  border-radius: 50%;
+  outline: none;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"]:checked {
+  border-color: #ffffff;
+}
+
+.radio-option input[type="radio"]:checked::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.step-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+/* =======================================
+   CARD DE SELECCIÓN DE COLOR INTERACTIVA
+   ======================================= */
+.card-color {
+  width: 100%;
+  max-width: 400px;
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+  /* Variables dinámicas para el color RGB */
+  --r: 80;
+  --g: 165;
+  --b: 92;
+}
+
+.color-preview {
+  width: 100%;
+  height: 220px;
+  border-radius: 4px;
+  /* Utiliza los valores dinámicos para pintar el fondo */
+  background-color: rgb(var(--r), var(--g), var(--b));
+}
+
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.control-row label {
+  width: 15px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+.control-row input[type="range"] {
+  flex: 1;
+  accent-color: #cccccc;
+  height: 4px;
+  background: #333333;
+  border-radius: 2px;
+}
+
+.control-row input[type="number"] {
+  width: 70px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #3d3d3d;
+  border-radius: 4px;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+}
