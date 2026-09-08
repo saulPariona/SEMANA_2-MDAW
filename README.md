@@ -1,4 +1,6 @@
-Sanchez Cueva, Jefferson Sebastian
-Salazar Rojas, Gabriel Omar
-Pariona Ramos, Saul Anibal
-Janampa Jaime, Khaled Alejandro
+##  Integrantes
+
+* **Janampa Jaime**, Khaled Alejandro
+* **Pariona Ramos**, Saul Anibal
+* **Salazar Rojas**, Gabriel Omar
+* **Sanchez Cueva**, Jefferson Sebastian
