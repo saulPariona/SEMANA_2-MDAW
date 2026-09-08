@@ -1,0 +1,478 @@
+/* ============================================================ */
+/* styles.css                                                    */
+/* ============================================================ */
+
+/* ----- 1. RESET / ESTILOS GENERALES ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+/* ----- 2. CONTENEDOR PRINCIPAL ----- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+/* ----- 3. TÍTULOS ----- */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.02em;
+}
+
+/* ----- 4. CATEGORÍAS / PESTAÑAS ----- */
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 0.5rem 1.8rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: #f0f0f0;
+    color: #555;
+    transition: 0.2s;
+    border: 1px solid transparent;
+}
+
+.tab.active {
+    background: #8E2AAE;
+    color: #ffffff;
+    border-color: #8E2AAE;
+}
+
+.tab:not(.active):hover {
+    background: #e5e5e5;
+}
+
+/* ----- 5. PRODUCTOS ----- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+    margin-bottom: 3.5rem;
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f0f0f0;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+.product-image {
+    background: #f5f5f5;
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #8E2AAE;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.3rem 0.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+.product-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0.9rem 1rem 0.1rem;
+    color: #1a1a1a;
+}
+
+.product-price {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #8E2AAE;
+    margin: 0 1rem 0.8rem;
+}
+
+.product-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #8E2AAE;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1rem 1rem auto;
+    transition: transform 0.2s, background 0.2s;
+    flex-shrink: 0;
+}
+
+.product-btn:hover {
+    background: #7a1f94;
+    transform: scale(1.05);
+}
+
+.product-btn svg {
+    stroke: #ffffff;
+    width: 18px;
+    height: 18px;
+}
+
+/* ----- 6. MARCAS ----- */
+.brands-section {
+    margin-bottom: 3.5rem;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+    margin-top: 0.5rem;
+}
+
+.brand-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.brand-circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+    padding: 0.5rem;
+    flex-shrink: 0;
+}
+
+.brand-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.brand-name {
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #222;
+}
+
+/* ----- 7. BANNERS ----- */
+.banners-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+}
+
+.banner-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: #eaeaea;
+}
+
+.banner-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.banner-card:hover img {
+    transform: scale(1.02);
+}
+
+.banner-content {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.banner-subtitle {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    margin-bottom: 0.1rem;
+}
+
+.banner-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.banner-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 0.5rem 1.8rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    text-transform: lowercase;
+}
+
+.banner-btn:hover {
+    background: #f0f0f0;
+    transform: scale(1.02);
+}
+
+/* ----- 8. HOVER DE IMÁGENES (opacidad) ----- */
+img:hover {
+    opacity: 0.9;
+}
+
+/* ------------------------------------------------------------- */
+/* 9. RESPONSIVE: < 480px                                        */
+/* ------------------------------------------------------------- */
+@media (max-width: 479px) {
+    .container {
+        padding: 1.2rem 0.8rem 2rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .category-tabs {
+        gap: 0.4rem;
+    }
+    .tab {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.8rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .product-image {
+        padding-top: 80%;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .brand-circle {
+        width: 80px;
+        height: 80px;
+        padding: 0.4rem;
+    }
+    .brand-name {
+        font-size: 0.75rem;
+    }
+
+    .banners-section {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .banner-content {
+        bottom: 1.2rem;
+        left: 1.2rem;
+    }
+    .banner-title {
+        font-size: 1.4rem;
+    }
+    .banner-btn {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.75rem;
+    }
+
+    .product-btn {
+        width: 34px;
+        height: 34px;
+        margin-right: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+    .product-btn svg {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* 10. RESPONSIVE: 480px – 899px                                 */
+/* ------------------------------------------------------------- */
+@media (min-width: 480px) and (max-width: 899px) {
+    .container {
+        padding: 1.5rem 1.2rem 2.5rem;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+    }
+    .brand-circle {
+        width: 90px;
+        height: 90px;
+        padding: 0.5rem;
+    }
+
+    .banners-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .banner-content {
+        bottom: 1.5rem;
+        left: 1.5rem;
+    }
+    .banner-title {
+        font-size: 1.7rem;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* 11. RESPONSIVE: 900px – 1199px                                */
+/* ------------------------------------------------------------- */
+@media (min-width: 900px) and (max-width: 1199px) {
+    .container {
+        padding: 2rem 1.8rem 3rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem;
+    }
+    .brand-circle {
+        width: 100px;
+        height: 100px;
+        padding: 0.5rem;
+    }
+
+    .banners-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .banner-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* 12. RESPONSIVE: >= 1200px                                     */
+/* ------------------------------------------------------------- */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        padding: 2.5rem 0 3.5rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.8rem;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1.8rem;
+    }
+    .brand-circle {
+        width: 110px;
+        height: 110px;
+        padding: 0.5rem;
+    }
+
+    .banners-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .banner-title {
+        font-size: 2.2rem;
+    }
+}
